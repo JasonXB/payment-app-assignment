@@ -1,7 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import { useCustomContext } from "./state-management/context";
+import "./App.css";
 
 function App() {
+  const a = useCustomContext();
+  console.log(a);
   return (
     <div className="App">
       <header className="App-header">
