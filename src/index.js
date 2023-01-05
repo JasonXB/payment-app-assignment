@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./global.css";
 import App from "./pages/App";
-import GlobalContextProvider from "./state-management/context";
+import GlobalContextProvider from "./context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
