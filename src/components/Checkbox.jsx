@@ -1,7 +1,9 @@
 import React from "react";
-
-// <Checkbox name="Gy Test" checked={true} />
-export default function Checkbox({ name, checked }) {
+/*
+For the Payments List: <Checkbox name="Gy Test" checked={true} margin="ml-4" />
+For the Modal: <Checkbox name="Gy Test" checked={true} />
+*/
+export default function Checkbox({ name, checked, margin = "" }) {
   return (
     <div class="form-check">
       <input
@@ -12,7 +14,9 @@ export default function Checkbox({ name, checked }) {
         checked={checked}
       />
       <label
-        className="ml-4 form-check-label inline-block text-gray-800 text-base"
+        className={
+          "form-check-label inline-block text-gray-800 text-base " + margin
+        }
         for="flexCheckDefault"
       >
         {name}

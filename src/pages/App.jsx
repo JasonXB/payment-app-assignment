@@ -4,6 +4,7 @@ import LayoutBlock from "../components/LayoutBlock";
 function App() {
   return (
     <LayoutBlock>
+      <Checkbox name="Gy Test" checked={true} margin="ml-4" />
       <Checkbox name="Gy Test" checked={true} />
     </LayoutBlock>
   );
