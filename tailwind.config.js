@@ -8,12 +8,13 @@ module.exports = {
     },
     colors: {
       blue: "#3257f3", // buttons
+      lightBlue: "#2585fc", // breakdown text
       yellow: "#ffd134", // flags
       gray: "#bcbcc4", // actions drop down and column titles
+      lightGray: "#dce4e4", // tabs component
       darkGray: "#f3f6fc", // background color
       red: "#e65261", // ready payouts text
       green: "#00c27c", // revenue generated text
-      lightBlue: "#2585fc", // breakdown text
       white: "#FFFFFF",
       // One off: checkbox blue #006bf8
     },
