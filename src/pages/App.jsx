@@ -1,11 +1,10 @@
 import React from "react";
-import Checkbox from "../components/Checkbox";
 import LayoutBlock from "../components/LayoutBlock";
+import SendPayoutsButton from "../components/SendPayoutsButton";
 function App() {
   return (
     <LayoutBlock>
-      <Checkbox name="Gy Test" checked={true} margin="ml-4" />
-      <Checkbox name="Gy Test" checked={true} />
+      <SendPayoutsButton />
     </LayoutBlock>
   );
 }
