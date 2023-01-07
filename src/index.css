@@ -73,3 +73,10 @@ html {
 .reveal {
   display: block;
 }
+
+.dropdownPadding {
+  padding-left: 0.75rem /* 12px */;
+  padding-right: 0.75rem /* 12px */;
+  padding-top: 0.625rem /* 10px */;
+  padding-bottom: 0.625rem /* 10px */;
+}
