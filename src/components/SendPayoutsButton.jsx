@@ -5,7 +5,7 @@ export default function SendPayoutsButton() {
   return (
     <button
       type="button"
-      class="w-full py-4 bg-blue text-white font-medium text-xs leading-normal rounded flex align-center items-center justify-center"
+      className="w-full py-4 bg-blue text-white font-medium text-xs leading-normal rounded flex align-center items-center justify-center"
     >
       <span className="mr-3 text-white text-[1.25rem]">Send payouts</span>
       <svg
