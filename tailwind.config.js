@@ -14,6 +14,7 @@ module.exports = {
       red: "#e65261", // ready payouts text
       green: "#00c27c", // revenue generated text
       lightBlue: "#2585fc", // breakdown text
+      white: "#FFFFFF",
       // One off: checkbox blue #006bf8
     },
     // fontFamily: {
@@ -30,4 +31,11 @@ module.exports = {
       },
     },
   },
+  // Install tailwind elements
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{html,js}",
+    "./node_modules/tw-elements/dist/js/**/*.js",
+  ],
+  plugins: [require("tw-elements/dist/plugin")],
 };
