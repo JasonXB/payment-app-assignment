@@ -1,21 +1,40 @@
 import React from "react";
 import DownArrow from "../icons/DownArrow";
 import RightArrow from "../icons/RightArrow";
-
+import useClickOutside from "../../utility/useClickOutside";
 export default function SortBy() {
+  // Detect when someone clicks outside of the dropdown component
+  const dropdownRef = React.useRef();
+
   // Control the nested drop down menus opening and closing with useState
-  const [tray1, setTray1] = React.useState(false);
-  const [tray2, setTray2] = React.useState(false);
-  const toggleTray1 = () => setTray1(!tray1);
-  const toggleTray2 = () => setTray1(!tray2);
+  const [trays, setTrays] = React.useState({
+    openFirst: false,
+    openSecond: false,
+  });
+  const toggleTray1 = function () {
+    // Closing the first tray should auto close the nested tray
+    if (trays.openFirst) setTrays({ openFirst: false, openSecond: false });
+    // Reopening the first tray should not auto open the nested tray
+    else setTrays({ openFirst: true, openSecond: false });
+  };
+  const openTray2 = function () {
+    // First tray should always be open if the second one is too
+    setTrays({ openFirst: true, openSecond: true });
+  };
+  const closeBothTrays = function () {
+    setTrays({ openFirst: false, openSecond: false });
+  };
+
+  useClickOutside(dropdownRef, () => closeBothTrays());
 
   const btnStyles = "dropdown-item text-sm text-left py-4 px-6 w-full font-normal block whitespace-nowrap bg-transparent hover:bg-lightGray"; // prettier-ignore
-  // #0b2c53
   return (
     <div className="dropdown relative">
       <button
+        ref={dropdownRef}
+        onClick={toggleTray1}
         className={
-          "dropdownPadding dropdown-toggle bg-blue font-medium text-xs leading-tight rounded flex items-center whitespace-nowrap"
+          "dropdownPadding bg-blue font-medium text-xs leading-tight rounded flex items-center whitespace-nowrap"
         }
         type="button"
         id="dropdownMenuButton1"
@@ -26,10 +45,14 @@ export default function SortBy() {
         <DownArrow />
       </button>
       <ul
-        className="hidden dropdown-menu divide-lightGray min-w-max absolute bg-white text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none"
+        className={
+          trays.openFirst
+            ? "min-w-max dropdown-menu absolute text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none"
+            : "hidden min-w-max dropdown-menu absolute text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none"
+        }
         aria-labelledby="dropdownMenuButton1"
       >
-        <li className="w-52">
+        <li className="w-52 bg-white rounded-t-lg">
           <button
             className={
               btnStyles + " rounded-t-lg grid grid-cols-[auto_1fr_auto]"
@@ -39,7 +62,7 @@ export default function SortBy() {
             <RightArrow />
           </button>
         </li>
-        <li className="w-52">
+        <li className="w-52 bg-white rounded-b-lg">
           <button
             className={
               btnStyles + " rounded-b-lg grid grid-cols-[auto_1fr_auto]"
