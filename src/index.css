@@ -80,3 +80,7 @@ html {
   padding-top: 0.625rem /* 10px */;
   padding-bottom: 0.625rem /* 10px */;
 }
+
+.listItemWidth {
+  width: 12rem; /* 176px */
+}

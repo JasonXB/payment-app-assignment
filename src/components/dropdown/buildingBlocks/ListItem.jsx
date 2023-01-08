@@ -6,7 +6,7 @@ export default function ListItem({ text, rounded = "" }) {
   if (rounded === "top") rounded = "rounded-t-lg";
   else if (rounded === "bottom") rounded = "rounded-b-lg";
   return (
-    <li className="w-44">
+    <li className="listItemWidth">
       <button
         className={
           rounded +
