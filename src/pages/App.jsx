@@ -1,5 +1,6 @@
 import React from "react";
 import LayoutBlock from "../components/LayoutBlock";
+import ListItem from "../components/dropdown/ListItem";
 
 function App() {
   return (
@@ -8,20 +9,7 @@ function App() {
         <div>
           <div className="dropdown relative">
             <button
-              className="
-          dropdownPadding
-          dropdown-toggle
-          bg-blue
-          text-white
-          font-medium
-          text-xs
-          leading-tight
-          uppercase
-          rounded
-          flex
-          items-center
-          whitespace-nowrap
-        "
+              className="dropdownPadding dropdown-toggle bg-blue text-white font-medium text-xs leading-tight uppercase rounded flex items-center whitespace-nowrap"
               type="button"
               id="dropdownMenuButton1"
               data-bs-toggle="dropdown"
@@ -45,68 +33,12 @@ function App() {
               </svg>
             </button>
             <ul
-              className="
-          dropdown-menu
-          divide-y         
-          divide-lightGray
-          min-w-max
-          absolute
-          hidden
-          bg-white
-          text-base
-          z-50
-          float-left
-          list-none
-          text-left
-          rounded-lg
-          shadow-lg
-          mt-1
-          m-0
-          bg-clip-padding
-          border-none
-        "
+              className="dropdown-menu divide-y divide-lightGray min-w-max absolute hidden bg-white text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none"
               aria-labelledby="dropdownMenuButton1"
             >
-              <li>
-                <a
-                  className="
-              dropdown-item
-              rounded-t-lg
-              text-sm
-              py-4
-              px-8
-              font-normal
-              block
-              w-full
-              whitespace-nowrap
-              bg-transparent
-              hover:bg-lightGray
-            "
-                  href="#"
-                >
-                  Send payouts
-                </a>
-              </li>
-              <li>
-                <a
-                  className="
-              dropdown-item
-              rounded-b-lg
-              text-sm
-              py-4
-              px-8
-              font-normal
-              block
-              w-full
-              whitespace-nowrap
-              bg-transparent
-              hover:bg-lightGray
-            "
-                  href="#"
-                >
-                  Send payouts
-                </a>
-              </li>
+              <ListItem text="Mark as paid" rounded="top" />
+              <ListItem text="Reject" />
+              <ListItem text="Send payouts" rounded="bottom" />
             </ul>
           </div>
         </div>
