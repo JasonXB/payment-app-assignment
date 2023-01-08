@@ -1,10 +1,11 @@
 import React from "react";
 import LayoutBlock from "../components/LayoutBlock";
-import StandardButton from "../components/buttons/StandardButton";
+import SortBy from "../components/dropdown/SortBy";
+
 function App() {
   return (
     <LayoutBlock>
-      <StandardButton text="Export"/>
+      <SortBy />
     </LayoutBlock>
   );
 }
