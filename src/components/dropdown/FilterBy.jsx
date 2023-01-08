@@ -1,10 +1,10 @@
 import React from "react";
 import DropdownMaker from "./buildingBlocks/DropdownMaker";
-export default function Actions() {
+export default function FilterBy() {
   return (
     <DropdownMaker
-      text="Actions"
-      listItems={["Mark as paid", "Reject", "Send payouts"]}
+      text="Filter by"
+      listItems={["All pending payouts", "Ready Payouts", "No Leaks"]}
     />
   );
 }
