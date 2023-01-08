@@ -48,7 +48,7 @@ export default function SortBy() {
         className={
           trays.openFirst
             ? "min-w-max dropdown-menu absolute text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none"
-            : "hidden min-w-max dropdown-menu absolute text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none"
+            : "hidden"
         }
         aria-labelledby="dropdownMenuButton1"
       >
