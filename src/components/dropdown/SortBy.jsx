@@ -2,37 +2,32 @@ import React from "react";
 import DownArrow from "../icons/DownArrow";
 import RightArrow from "../icons/RightArrow";
 import useClickOutside from "../../utility/useClickOutside";
+
 export default function SortBy() {
+  // Manipulate which drop down menus and sub menus are open with useReducer
+  const [menu, dispatch] = React.useReducer(reducer, {
+    sortBy: false, // first level sub menu
+    revenueGenerated: false, // second level sub menu (1 of 2)
+    mostRecentReferral: false, // second level sub menu (2 of 2)
+  });
+  const menuManip = {
+    open: () => dispatch({ type: "OPEN_MENU" }),
+    toggle: () => dispatch({ type: "TOGGLE_MENU" }),
+    close: () => dispatch({ type: "CLOSE_MENU" }),
+    openRevenueGenerated: () => dispatch({ type: "OPEN_REV_GENERATED" }),
+    openRecentReferral: () => dispatch({ type: "OPEN_RECENT_REFERRAL" }),
+  };
+
   // Detect when someone clicks outside of the dropdown component
   const dropdownRef = React.useRef();
-
-  // Control the nested drop down menus opening and closing with useState
-  const [trays, setTrays] = React.useState({
-    openFirst: false,
-    openSecond: false,
-  });
-  const toggleTray1 = function () {
-    // Closing the first tray should auto close the nested tray
-    if (trays.openFirst) setTrays({ openFirst: false, openSecond: false });
-    // Reopening the first tray should not auto open the nested tray
-    else setTrays({ openFirst: true, openSecond: false });
-  };
-  const openTray2 = function () {
-    // First tray should always be open if the second one is too
-    setTrays({ openFirst: true, openSecond: true });
-  };
-  const closeBothTrays = function () {
-    setTrays({ openFirst: false, openSecond: false });
-  };
-
-  useClickOutside(dropdownRef, () => closeBothTrays());
+  useClickOutside(dropdownRef, () => menuManip.close());
 
   const btnStyles = "dropdown-item text-sm text-left py-4 px-6 w-full font-normal block whitespace-nowrap bg-transparent hover:bg-lightGray"; // prettier-ignore
   return (
     <div className="dropdown relative">
       <button
         ref={dropdownRef}
-        onClick={toggleTray1}
+        onClick={menuManip.toggle}
         className={
           "dropdownPadding bg-blue font-medium text-xs leading-tight rounded flex items-center whitespace-nowrap"
         }
@@ -46,7 +41,7 @@ export default function SortBy() {
       </button>
       <ul
         className={
-          trays.openFirst
+          menu.sortBy
             ? "min-w-max dropdown-menu absolute text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none"
             : "hidden"
         }
@@ -75,4 +70,47 @@ export default function SortBy() {
       </ul>
     </div>
   );
+}
+
+function reducer(state, action) {
+  switch (action.type) {
+    // Toggle dropdown menu
+    case "TOGGLE_MENU":
+      return {
+        sortBy: !state.sortBy,
+        revenueGenerated: false,
+        mostRecentReferral: false,
+      };
+    // Close entire dropdown menu
+    case "OPEN_MENU":
+      return {
+        sortBy: true,
+        revenueGenerated: false,
+        mostRecentReferral: false,
+      };
+    // Close entire dropdown menu
+    case "CLOSE_MENU":
+      return {
+        sortBy: false,
+        revenueGenerated: false,
+        mostRecentReferral: false,
+      };
+
+    // Open revenue generated sub menu
+    case "OPEN_REVENUE_GENERATED":
+      return {
+        sortBy: true,
+        revenueGenerated: true,
+        mostRecentReferral: false,
+      };
+    // Open recent referral sub menu
+    case "OPEN_RECENT_REFERRAL":
+      return {
+        sortBy: true,
+        revenueGenerated: false,
+        mostRecentReferral: true,
+      };
+    default:
+      return state;
+  }
 }
