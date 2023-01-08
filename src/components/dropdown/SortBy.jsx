@@ -22,7 +22,7 @@ export default function SortBy() {
   const dropdownRef = React.useRef();
   useClickOutside(dropdownRef, () => menuManip.close());
 
-  const btnStyles = "dropdown-item text-sm text-left py-4 px-6 w-full font-normal block whitespace-nowrap bg-transparent hover:bg-lightGray"; // prettier-ignore
+  const btnStyles = "text-sm text-left py-4 px-6 w-full font-normal block whitespace-nowrap hover:bg-lightGray"; // prettier-ignore
   return (
     <div className="dropdown relative">
       <button
@@ -32,9 +32,6 @@ export default function SortBy() {
           "dropdownPadding bg-blue font-medium text-xs leading-tight rounded flex items-center whitespace-nowrap"
         }
         type="button"
-        id="dropdownMenuButton1"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
       >
         <span className="text-white">Sort by</span>
         <DownArrow />
