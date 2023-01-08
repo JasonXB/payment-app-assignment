@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Searchbar() {
   return (
-    <div class="mb-3 w-full">
+    <div className="mb-3 w-full">
       <input
         type="search"
-        class="
+        className="
     form-control
     block
     w-full

@@ -4,7 +4,7 @@ export default function ViewArrow() {
   return (
     <button
       type="button"
-      className="flex flex-row items-center px-2 py-1 bg-none font-medium text-xs leading-normal uppercase rounded align-center"
+      className="flex flex-row items-center px-2 py-1 bg-none font-medium text-xs leading-normal rounded align-center"
     >
       <span className="text-lightBlue">View</span>
       <svg

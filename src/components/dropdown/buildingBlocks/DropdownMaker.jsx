@@ -9,7 +9,7 @@ export default function DropdownMaker({ listItems, text }) {
   return (
     <div className="dropdown relative">
       <button
-        className="dropdownPadding dropdown-toggle bg-blue font-medium text-xs leading-tight uppercase rounded flex items-center whitespace-nowrap"
+        className="dropdownPadding dropdown-toggle bg-blue font-medium text-xs leading-tight rounded flex items-center whitespace-nowrap"
         type="button"
         id="dropdownMenuButton1"
         data-bs-toggle="dropdown"
@@ -29,9 +29,6 @@ export default function DropdownMaker({ listItems, text }) {
           else if (i === lastListIndex) rounded = "bottom";
           return <ListItem key={uuidv4()} text={text} rounded={rounded} />;
         })}
-        {/* <ListItem text="Mark as paid" rounded="top" />
-        <ListItem text="Reject" />
-        <ListItem text="Send payouts" rounded="bottom" /> */}
       </ul>
     </div>
   );
