@@ -47,6 +47,8 @@ function App() {
             <ul
               className="
           dropdown-menu
+          divide-y         
+          divide-lightGray
           min-w-max
           absolute
           hidden
@@ -59,7 +61,6 @@ function App() {
           rounded-lg
           shadow-lg
           mt-1
-          hidden
           m-0
           bg-clip-padding
           border-none
@@ -70,41 +71,20 @@ function App() {
                 <a
                   className="
               dropdown-item
-              text-sm
-              py-2
-              px-4
-              font-normal
-              block
-              w-full
-              whitespace-nowrap
-              bg-transparent
-              text-gray-700
-              hover:bg-lightGray
               rounded-t-lg
-            "
-                  href="#"
-                >
-                  Action
-                </a>
-              </li>
-              <li>
-                <a
-                  className="
-              dropdown-item
               text-sm
-              py-2
-              px-4
+              py-4
+              px-8
               font-normal
               block
               w-full
               whitespace-nowrap
               bg-transparent
-              text-gray-700
               hover:bg-lightGray
             "
                   href="#"
                 >
-                  Another action
+                  Send payouts
                 </a>
               </li>
               <li>
@@ -113,19 +93,18 @@ function App() {
               dropdown-item
               rounded-b-lg
               text-sm
-              py-2
-              px-4
+              py-4
+              px-8
               font-normal
               block
               w-full
               whitespace-nowrap
               bg-transparent
-              text-gray-700
               hover:bg-lightGray
             "
                   href="#"
                 >
-                  Something else here
+                  Send payouts
                 </a>
               </li>
             </ul>
