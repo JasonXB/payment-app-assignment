@@ -13,9 +13,9 @@ const styles = {
 export default function SortBy() {
   // Manipulate which drop down menus and sub menus are open with useReducer
   const [menu, dispatch] = React.useReducer(reducer, {
-    sortBy: true, // first level sub menu
+    sortBy: false, // first level sub menu
     revenueGenerated: false, // second level sub menu (1 of 2)
-    mostRecentReferral: true, // second level sub menu (2 of 2)
+    mostRecentReferral: false, // second level sub menu (2 of 2)
   });
   const menuManip = {
     open: () => {
@@ -30,20 +30,14 @@ export default function SortBy() {
       console.log("close menu!");
       dispatch({ type: "CLOSE_MENU" });
     },
-    openRevenueGenerated: () => {
+    toggleRevenueGenerated: () => {
       console.log("open rev generated!");
-      dispatch({ type: "OPEN_REV_GENERATED" });
+      dispatch({ type: "TOGGLE_REVENUE_GENERATED" });
     },
-    openRecentReferral: () => {
+    toggleRecentReferral: () => {
       console.log("open recent referral!");
-      dispatch({ type: "OPEN_RECENT_REFERRAL" });
+      dispatch({ type: "TOGGLE_RECENT_REFERRAL" });
     },
-    //! COMMENT IN WHEN FEATURE IS FINALIZED
-    // open: () => dispatch({ type: "OPEN_MENU" }),
-    // toggle: () => dispatch({ type: "TOGGLE_MENU" }),
-    // close: () => dispatch({ type: "CLOSE_MENU" }),
-    // openRevenueGenerated: () => dispatch({ type: "OPEN_REV_GENERATED" }),
-    // openRecentReferral: () => dispatch({ type: "OPEN_RECENT_REFERRAL" }),
   };
 
   // Detect when someone clicks outside of the dropdown component
@@ -72,7 +66,7 @@ export default function SortBy() {
       >
         <li className="w-52 bg-white rounded-t-lg">
           <button
-            onClick={menuManip.openRevenueGenerated}
+            onClick={menuManip.toggleRevenueGenerated}
             className={
               styles.button + " rounded-t-lg grid grid-cols-[auto_1fr_auto]"
             }
@@ -84,7 +78,7 @@ export default function SortBy() {
 
         <li className="w-52 bg-white rounded-b-lg">
           <button
-            onClick={menuManip.openRecentReferral}
+            onClick={menuManip.toggleRecentReferral}
             className={
               styles.button + " rounded-b-lg grid grid-cols-[auto_1fr_auto]"
             }
@@ -144,18 +138,18 @@ function reducer(state, action) {
       };
 
     // Open revenue generated sub menu
-    case "OPEN_REVENUE_GENERATED":
+    case "TOGGLE_REVENUE_GENERATED":
       return {
         sortBy: true,
-        revenueGenerated: true,
+        revenueGenerated: !state.revenueGenerated,
         mostRecentReferral: false,
       };
     // Open recent referral sub menu
-    case "OPEN_RECENT_REFERRAL":
+    case "TOGGLE_RECENT_REFERRAL":
       return {
         sortBy: true,
         revenueGenerated: false,
-        mostRecentReferral: true,
+        mostRecentReferral: !state.mostRecentReferral,
       };
     default:
       return state;
