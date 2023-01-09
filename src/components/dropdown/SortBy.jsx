@@ -2,13 +2,7 @@ import React from "react";
 import DownArrow from "../icons/DownArrow";
 import RightArrow from "../icons/RightArrow";
 import useClickOutside from "../../utility/useClickOutside";
-
-const styles = {
-  button:
-    "text-sm text-left py-4 px-6 w-full font-normal block whitespace-nowrap hover:bg-lightGray",
-  submenu: "w-auto shadow-lg absolute z-100 rounded-lg", // prettier-ignore
-  submenuButton: "bg-white text-sm text-left py-4 px-6 whitespace-nowrap hover:bg-lightGray", // prettier-ignore
-};
+import { reducer } from "./buildingBlocks/SortByReducer";
 
 export default function SortBy() {
   // Manipulate which drop down menus and sub menus are open with useReducer
@@ -18,29 +12,14 @@ export default function SortBy() {
     mostRecentReferral: false, // second level sub menu (2 of 2)
   });
   const menuManip = {
-    open: () => {
-      console.log("open menu!");
-      dispatch({ type: "OPEN_MENU" });
-    },
-    toggle: () => {
-      console.log("menu toggle!");
-      dispatch({ type: "TOGGLE_MENU" });
-    },
-    close: () => {
-      console.log("close menu!");
-      dispatch({ type: "CLOSE_MENU" });
-    },
-    toggleRevenueGenerated: () => {
-      console.log("open rev generated!");
-      dispatch({ type: "TOGGLE_REVENUE_GENERATED" });
-    },
-    toggleRecentReferral: () => {
-      console.log("open recent referral!");
-      dispatch({ type: "TOGGLE_RECENT_REFERRAL" });
-    },
+    open: () => dispatch({ type: "OPEN_MENU" }),
+    toggle: () => dispatch({ type: "TOGGLE_MENU" }),
+    close: () => dispatch({ type: "CLOSE_MENU" }),
+    toggleRevenueGenerated: () => dispatch({ type: "TOGGLE_REVENUE_GENERATED" }), // prettier-ignore
+    toggleRecentReferral: () => dispatch({ type: "TOGGLE_RECENT_REFERRAL" }),
   };
 
-  // Detect when someone clicks outside of the dropdown component
+  // Detect when someone clicks outside of the dropdown component using a custom hook
   const dropdownRef = React.useRef();
   useClickOutside(dropdownRef, () => menuManip.close());
 
@@ -91,20 +70,32 @@ export default function SortBy() {
       {/* NESTED SUB DROPDOWN MENUS */}
       {menu.revenueGenerated && (
         <div className={styles.submenu + " left-[210px] top-[40px]"}>
-          <button className={styles.submenuButton + " rounded-t-lg"}>
+          <button
+            onClick={menuManip.close}
+            className={styles.submenuButton + " rounded-t-lg"}
+          >
             Highest first
           </button>
-          <button className={styles.submenuButton + " rounded-b-lg"}>
+          <button
+            onClick={menuManip.close}
+            className={styles.submenuButton + " rounded-b-lg"}
+          >
             Lowest First
           </button>
         </div>
       )}
       {menu.mostRecentReferral && (
         <div className={styles.submenu + " left-[210px] top-[91px] "}>
-          <button className={styles.submenuButton + " rounded-t-lg"}>
+          <button
+            onClick={menuManip.close}
+            className={styles.submenuButton + " rounded-t-lg"}
+          >
             Newest first
           </button>
-          <button className={styles.submenuButton + " rounded-b-lg"}>
+          <button
+            onClick={menuManip.close}
+            className={styles.submenuButton + " rounded-b-lg"}
+          >
             Oldest First
           </button>
         </div>
@@ -113,45 +104,8 @@ export default function SortBy() {
   );
 }
 
-function reducer(state, action) {
-  switch (action.type) {
-    // Toggle dropdown menu
-    case "TOGGLE_MENU":
-      return {
-        sortBy: !state.sortBy,
-        revenueGenerated: false,
-        mostRecentReferral: false,
-      };
-    // Close entire dropdown menu
-    case "OPEN_MENU":
-      return {
-        sortBy: true,
-        revenueGenerated: false,
-        mostRecentReferral: false,
-      };
-    // Close entire dropdown menu
-    case "CLOSE_MENU":
-      return {
-        sortBy: false,
-        revenueGenerated: false,
-        mostRecentReferral: false,
-      };
-
-    // Open revenue generated sub menu
-    case "TOGGLE_REVENUE_GENERATED":
-      return {
-        sortBy: true,
-        revenueGenerated: !state.revenueGenerated,
-        mostRecentReferral: false,
-      };
-    // Open recent referral sub menu
-    case "TOGGLE_RECENT_REFERRAL":
-      return {
-        sortBy: true,
-        revenueGenerated: false,
-        mostRecentReferral: !state.mostRecentReferral,
-      };
-    default:
-      return state;
-  }
-}
+const styles = {
+  button: "text-sm text-left py-4 px-6 w-full font-normal block whitespace-nowrap hover:bg-lightGray", // prettier-ignore
+  submenu: "w-auto shadow-lg absolute z-100 rounded-lg", // prettier-ignore
+  submenuButton: "bg-white text-sm text-left py-4 px-6 whitespace-nowrap hover:bg-lightGray w-full", // prettier-ignore
+};

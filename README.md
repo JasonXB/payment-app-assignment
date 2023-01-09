@@ -8,3 +8,4 @@ Make sure the search / export buttons, search field, and dropdown menus all have
 Will do when we create that grid row of content
 
 Optimize with useMemo and useCallback
+Fix highlights on drop down menus
