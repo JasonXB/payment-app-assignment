@@ -14,12 +14,12 @@ export default function TableTop() {
     <section>
       <Tabs />
       <div className="flex justify-between">
-        <div className="flex gap-2 h-[35px]">
+        <div className="flex gap-2 tabletopHeight">
           <SortBy />
           <FilterBy />
           <Actions />
         </div>
-        <div className="flex h-[35px]">
+        <div className="flex tabletopHeight">
           <SearchBar />
           <SearchButton />
           <ExportButton />

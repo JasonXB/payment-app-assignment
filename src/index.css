@@ -85,10 +85,6 @@ html {
   width: 12rem; /* 176px */
 }
 
-.layoutContainer {
-  margin: auto;
-  max-width: 1920px;
-  min-width: 360px;
-  justify-items: center;
-  grid-gap: 0.5rem;
+.tabletopHeight {
+  height: 35px;
 }
