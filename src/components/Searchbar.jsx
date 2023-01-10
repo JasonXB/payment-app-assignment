@@ -16,7 +16,7 @@ export default function Searchbar({ className = "" }) {
     font-normal
     text-gray-700
     bg-white bg-clip-padding
-    border border-solid
+    border border-solid border-gray
     rounded
     transition
     ease-in-out

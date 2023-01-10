@@ -13,5 +13,4 @@ Make the 3 rectangles up top actually have dynamic values (use React context)
 Make all shadow-lg and shadow-md 's match (After you put the site together)
 Add number of ending payouts (use dynamic value)
 Make send payment button extend to end on large screens
-Turn Searchbar border from black to gray
 Add trailing dots to any text box that can be long depending on the value
