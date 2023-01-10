@@ -1,8 +1,9 @@
 import React from "react";
-import GiftIcon from "./icons/Gift";
-import SendPayment from "./buttons/SendPayment";
-import ViewArrow from "./ViewArrow";
-import { convertRawDateToString } from "../utility/convertDate";
+import GiftIcon from "../../icons/Gift";
+import SendPayment from "../../buttons/SendPayment";
+import ViewArrow from "../../ViewArrow";
+import { convertRawDateToString } from "../../../utility/convertDate";
+
 export default function TableRow({ data }) {
   const tdStyle = "text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap "; // prettier-ignore
   return (

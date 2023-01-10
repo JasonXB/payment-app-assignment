@@ -1,9 +1,8 @@
 import React from "react";
-import TableRow from "../components/TableRow";
+import TableRow from "./buildingBlocks/TableRow";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Table({ data }) {
-  
   return (
     <div id="payments-table" className="flex flex-col">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
