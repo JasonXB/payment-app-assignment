@@ -29,7 +29,7 @@ module.exports = {
       lightGray: "#dce4e4", // tabs component
       darkGray: "#f3f6fc", // background color
       red: "#e65261", // ready payouts text
-      green: "#00c27c", // revenue generated text
+      green: "#02ad6f", // revenue generated text
       white: "#FFFFFF",
       // One off: checkbox blue #006bf8
     },

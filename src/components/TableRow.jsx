@@ -4,34 +4,24 @@ import SendPayment from "./buttons/SendPayment";
 import ViewArrow from "./ViewArrow";
 import { convertRawDateToString } from "../utility/convertDate";
 export default function TableRow({ data }) {
-
+  const tdStyle = "text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap "; // prettier-ignore
   return (
     <tr id="table_row_1" className="border-b">
-      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-        {data.affiliateName}
-      </td>
-      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+      <td className={tdStyle + "text-blue"}>{data.affiliateName}</td>
+      <td className={tdStyle}>
         {convertRawDateToString(data.mostRecentReferral)}
       </td>
-      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        {data.revenueGenerated}
-      </td>
-      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        {data.paidPayouts}
-      </td>
-      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        {data.unpaidPayouts}
-      </td>
-      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        {data.readyPayouts}
-      </td>
-      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+      <td className={tdStyle + "text-green"}>+${data.revenueGenerated}</td>
+      <td className={tdStyle}>${data.paidPayouts}</td>
+      <td className={tdStyle}>${data.unpaidPayouts}</td>
+      <td className={tdStyle + "text-red"}>${data.readyPayouts}</td>
+      <td className={tdStyle}>
         <ViewArrow />
       </td>
-      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+      <td className={tdStyle}>
         <GiftIcon />
       </td>
-      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+      <td className={tdStyle}>
         <SendPayment />
       </td>
     </tr>

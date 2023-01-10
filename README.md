@@ -11,3 +11,4 @@ Optimize with useMemo and useCallback
 Fix highlights on drop down menus
 Make the 3 rectangles up top actually have dynamic values (use React context)
 Make all shadow-lg and shadow-md 's match (After you put the site together)
+Add number of ending payouts (use dynamic value)
