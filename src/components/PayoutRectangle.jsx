@@ -6,7 +6,7 @@ export default function PayoutRectangle({
   includeButton = false,
 }) {
   return (
-    <div className="bg-white mr-8 inline-block shadow-md px-4 py-3 w-[300px] h-[100px] rounded-lg">
+    <div className="bg-white inline-block shadow-md px-4 py-3 w-full sm:w-[400px] lg:w-[290px] h-[100px] rounded-lg">
       <div className="flex flex-row items-center mb-[12px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
