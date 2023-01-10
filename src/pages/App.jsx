@@ -11,7 +11,6 @@ function App() {
       <PayoutsOverview />
       <TableTop />
       <Table data={mockData} />
-      <div className="bg-green">f</div>
     </LayoutBlock>
   );
 }

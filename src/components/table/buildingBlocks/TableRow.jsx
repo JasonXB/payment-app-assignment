@@ -2,13 +2,20 @@ import React from "react";
 import GiftIcon from "../../icons/Gift";
 import SendPayment from "../../buttons/SendPayment";
 import ViewArrow from "../../ViewArrow";
+import Affiliate from "./Affiliate";
 import { convertRawDateToString } from "../../../utility/convertDate";
 
 export default function TableRow({ data }) {
   const tdStyle = "text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap "; // prettier-ignore
   return (
     <tr className="border-b">
-      <td className={tdStyle + "text-blue"}>{data.affiliateName}</td>
+      <td className={tdStyle + "text-blue"}>
+        <Affiliate
+          name={data.affiliateName}
+          checked={data.checked}
+          containsLeaks={data.flag}
+        />
+      </td>
       <td className={tdStyle}>
         {convertRawDateToString(data.mostRecentReferral)}
       </td>
