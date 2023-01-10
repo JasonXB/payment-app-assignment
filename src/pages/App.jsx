@@ -7,6 +7,7 @@ function App() {
   return (
     <LayoutBlock>
       <PayoutsOverview />
+      <div className="bg-blue">f</div>
       {/* <TableTop />
       <Table /> */}
     </LayoutBlock>
