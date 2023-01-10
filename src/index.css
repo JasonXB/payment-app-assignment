@@ -88,3 +88,7 @@ html {
 .tabletopHeight {
   height: 35px;
 }
+
+#payments-table * {
+  border-color: #bcbcc4;
+}

@@ -6,7 +6,7 @@ import { convertRawDateToString } from "../utility/convertDate";
 export default function TableRow({ data }) {
   const tdStyle = "text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap "; // prettier-ignore
   return (
-    <tr id="table_row_1" className="border-b">
+    <tr className="border-b">
       <td className={tdStyle + "text-blue"}>{data.affiliateName}</td>
       <td className={tdStyle}>
         {convertRawDateToString(data.mostRecentReferral)}

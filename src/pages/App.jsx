@@ -10,8 +10,8 @@ function App() {
     <LayoutBlock>
       <PayoutsOverview />
       <TableTop />
-      <div className="bg-green">f</div>
       <Table data={mockData} />
+      <div className="bg-green">f</div>
     </LayoutBlock>
   );
 }

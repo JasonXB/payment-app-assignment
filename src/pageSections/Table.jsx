@@ -1,9 +1,11 @@
 import React from "react";
 import TableRow from "../components/TableRow";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Table({ data }) {
+  
   return (
-    <div className="flex flex-col">
+    <div id="payments-table" className="flex flex-col">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
           <div className="overflow-x-auto">
@@ -67,9 +69,9 @@ export default function Table({ data }) {
                 </tr>
               </thead>
               <tbody>
-                {data.map((el, i) => {
-                  return <TableRow key={i} data={el} />;
-                })}
+                {data.map((el) => (
+                  <TableRow key={uuidv4()} data={el} />
+                ))}
               </tbody>
             </table>
           </div>
