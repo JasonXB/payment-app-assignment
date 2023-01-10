@@ -9,7 +9,6 @@ import ExportButton from "../components/buttons/Export";
 
 export default function TableTop() {
   //$ Number of pending payouts
-
   return (
     <section>
       <Tabs />
