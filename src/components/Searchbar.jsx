@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Searchbar() {
   return (
-    <div className="mb-3 w-full tabletopHeight">
+    <div className="mb-3 w-full tabletopHeight mr-2">
       <input
         type="search"
         className="

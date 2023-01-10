@@ -19,7 +19,7 @@ export default function TableTop() {
           <FilterBy />
           <Actions />
         </div>
-        <div className="flex tabletopHeight">
+        <div className="flex gap-2 tabletopHeight">
           <SearchBar />
           <SearchButton />
           <ExportButton />
