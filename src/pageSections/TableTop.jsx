@@ -13,8 +13,8 @@ export default function TableTop() {
   return (
     <section>
       <Tabs />
-      <div className="flex justify-between">
-        <div className="flex gap-2 tabletopHeight">
+      <div className="flex justify-between flex-col md:flex-row">
+        <div className="flex gap-2 tabletopHeight mb-4">
           <SortBy />
           <FilterBy />
           <Actions />

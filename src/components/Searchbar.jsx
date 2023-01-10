@@ -1,18 +1,18 @@
 import React from "react";
 
-export default function Searchbar() {
+export default function Searchbar({ className = "" }) {
   return (
-    <div className="mb-3 w-full tabletopHeight mr-2">
+    <div className={className + " mb-3 w-[250px] tabletopHeight sm:mr-2"}>
       <input
         type="search"
         className="
     form-control
     block
     h-full
-    w-[250px]
+    w-full
     px-3
     py-1.5
-    text-base
+    text-sm
     font-normal
     text-gray-700
     bg-white bg-clip-padding
