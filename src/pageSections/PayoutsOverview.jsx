@@ -4,19 +4,28 @@ export default function PayoutsOverview() {
   return (
     <section>
       <h6 className="text-xl font-bold mb-6">Payouts Overview</h6>
-      <div className="bg-white inline-block shadow-md px-4 py-3 w-[300px] h-[100px] rounded-lg">
+      <div className="bg-white mr-8 inline-block shadow-md px-4 py-3 w-[300px] h-[100px] rounded-lg">
         <div className="flex flex-row items-center mb-1">
           <svg
-            version="1.1"
-            viewBox="0 0 700 700"
-            className="w-6"
             xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            className="w-6 mr-2 bi bi-cash"
+            viewBox="0 0 16 16"
           >
-            <path d="m160.62 214.65v117.2c0.29687 11.738-4.0742 23.117-12.152 31.641-8.0781 8.5234-19.207 13.496-30.945 13.836h-1.3047c-11.738-0.33984-22.863-5.3125-30.941-13.836-8.0781-8.5234-12.449-19.902-12.156-31.641v-118.23c-0.53906-14.57 6.2344-28.445 18.051-36.984 11.816-8.5391 27.117-10.613 40.781-5.5273 8.6094 3.5273 15.953 9.5703 21.07 17.34 5.1133 7.7695 7.7617 16.902 7.5977 26.203zm463.68 105.29c-2.8555-5.4805-8.3711-9.0625-14.539-9.4492-136.01-8.625-205.51-19.617-240.86-28.137-0.96094-0.23047-0.67188-1.6094 0.30859-1.7148 49.672-5.4062 79.273-12.508 80.742-35.438 1.2734-19.766-9.1719-36.309-156.1-69.281-32.898-7.3516-98.215 10.324-107.98 12.367l0.003907-0.003906c-3.9453 0.80859-7.4922 2.957-10.039 6.0742-2.5469 3.1172-3.9414 7.0195-3.9492 11.047v131.41c0.011719 3.9219 1.3359 7.7305 3.7656 10.812 2.4297 3.0781 5.8242 5.2578 9.6367 6.1836 15.707 3.8359 133.26 37.539 168.88 37.922 8.4297 0.09375 16.566 0.13672 24.48 0.13672 215.57 0 236.53-33.684 243.57-45.016 5.375-7.9805 6.168-18.195 2.0938-26.91z" />
+            <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+            <path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z" />
           </svg>
           <p className="font-bold">Total Paid Payouts</p>
         </div>
-        <p className="font-bold text-2xl">$0.00</p>
+        <div className="flex flex-row justify-between">
+          <p className="font-bold text-2xl">$0.00</p>
+          <button
+            type="button"
+            class="inline-block px-4 py-0 bg-blue text-white font-medium text-xs leading-tight rounded hover:shadow-lg "
+          >
+            Pay All
+          </button>
+        </div>
       </div>
     </section>
   );
