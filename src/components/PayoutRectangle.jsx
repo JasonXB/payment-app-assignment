@@ -3,7 +3,8 @@ import React from "react";
 export default function PayoutRectangle({
   total,
   label,
-  includeButton = false,
+  includeButton = false, // decides whether to include a Pay All button component
+  green = false, // makes the number green if set to true
 }) {
   return (
     <div className="bg-white inline-block shadow-md px-4 py-3 w-full sm:w-[400px] lg:w-[290px] h-[100px] rounded-lg">
@@ -20,7 +21,13 @@ export default function PayoutRectangle({
         <p className="font-bold">{label}</p>
       </div>
       <div className="flex flex-row justify-between">
-        <p className="font-bold text-2xl text-[1.65rem]">${total}</p>
+        <p
+          className={`${
+            green ? "text-green" : ""
+          } font-bold text-2xl text-[1.65rem]`}
+        >
+          ${total}
+        </p>
         {includeButton && (
           <button
             type="button"

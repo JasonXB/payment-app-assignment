@@ -1,6 +1,6 @@
 import React from "react";
 import PayoutRectangle from "../components/PayoutRectangle";
-import SearchButton from "../"
+
 export default function PayoutsOverview() {
   //$ Three total props must be made dynamic
   return (
@@ -15,6 +15,7 @@ export default function PayoutsOverview() {
           label="Total Ready Payouts"
           total="185.88"
           includeButton={true}
+          green={true}
         />
       </div>
     </section>
