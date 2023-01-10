@@ -1,4 +1,7 @@
 import React from "react";
+import GiftIcon from "../components/icons/Gift";
+import ViewArrow from "../components/ViewArrow";
+import SendPayment from "../components/buttons/SendPayment";
 
 export default function Table() {
   return (
@@ -86,16 +89,15 @@ export default function Table() {
                     ready payouts
                   </td>
                   <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    VIEW ARROW
+                    <ViewArrow />
                   </td>
                   <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    GIFT SVG
+                    <GiftIcon />
                   </td>
                   <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    SEND PAYMENT BUTTON
+                    <SendPayment />
                   </td>
                 </tr>
-                
               </tbody>
             </table>
           </div>
