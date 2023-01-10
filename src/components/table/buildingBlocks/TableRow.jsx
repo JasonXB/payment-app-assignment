@@ -6,7 +6,7 @@ import Affiliate from "./Affiliate";
 import { convertRawDateToString } from "../../../utility/convertDate";
 
 export default function TableRow({ data }) {
-  const tdStyle = "text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap "; // prettier-ignore
+  const tdStyle = "text-sm text-gray-900 font-medium pl-6 py-4 whitespace-nowrap "; // prettier-ignore
   return (
     <tr className="border-b">
       <td className={tdStyle + "text-blue"}>
