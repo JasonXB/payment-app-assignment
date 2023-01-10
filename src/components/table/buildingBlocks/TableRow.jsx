@@ -13,7 +13,7 @@ export default function TableRow({ data }) {
         <Affiliate
           name={data.affiliateName}
           checked={data.checked}
-          containsLeaks={data.flag}
+          flag={data.flag}
         />
       </td>
       <td className={tdStyle}>
