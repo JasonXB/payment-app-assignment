@@ -2,7 +2,7 @@ import React from "react";
 import PayoutRectangle from "../components/PayoutRectangle";
 export default function PayoutsOverview() {
   return (
-    <section className="">
+    <section className="mb-10">
       <h6 className="text-[1.5rem] leading-7 text-center font-bold mb-6 lg:text-left">
         Payouts Overview
       </h6>

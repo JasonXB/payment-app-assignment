@@ -7,9 +7,9 @@ function App() {
   return (
     <LayoutBlock>
       <PayoutsOverview />
-      <div className="bg-blue">f</div>
-      {/* <TableTop />
-      <Table /> */}
+      <TableTop />
+      <div className="bg-green">f</div>
+      <Table />
     </LayoutBlock>
   );
 }

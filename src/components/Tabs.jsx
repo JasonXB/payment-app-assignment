@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Tabs() {
   return (
-    <div className="grid grid-cols-[auto_1fr] ">
+    <div className="grid grid-cols-[auto_1fr] mb-8">
       <div>
         <button className="px-4 py-2 bg-white border-lightGray border-[2px] border-b-0 rounded-t-md">
           Pending Payouts
