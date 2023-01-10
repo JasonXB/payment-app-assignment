@@ -2,13 +2,14 @@ import React from "react";
 
 export default function Searchbar() {
   return (
-    <div className="mb-3 w-full">
+    <div className="mb-3 w-full h-[35px]">
       <input
         type="search"
         className="
     form-control
     block
-    w-full
+    h-full
+    w-[250px]
     px-3
     py-1.5
     text-base
