@@ -6,11 +6,14 @@ export const useCustomContext = () => useContext(GlobalContext); // export custo
 
 export default function GlobalContextProvider(props) {
   // Define state variables and methods that mutate them
-  const [count, setCount] = useState(0);
-  const increaseCount = () => setCount(count + 1);
-  const decreaseCount = () => setCount(count - 1);
-  // Create an object that lets you distriibute all state variables & methods to regular components
-  const distribution = { count, increaseCount, decreaseCount };
+  const [total, setTotal] = useState(0); // payment modal total value
+  const [showModal, setShowModal] = useState(false); // show modal if true
+  const toggleModal = () => setShowModal(!showModal);
+  // const revealModal = () => setShowModal(true);
+  // const hideModal = () => setShowModal(false);
+
+  // Create an object that lets you distribute all state variables & methods to regular components
+  const distribution = { total, setTotal, showModal, toggleModal };
   return (
     <GlobalContext.Provider value={distribution}>
       {props.children}

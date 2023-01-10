@@ -13,3 +13,4 @@ Make the 3 rectangles up top actually have dynamic values (use React context)
 Make all shadow-lg and shadow-md 's match (After you put the site together)
 Add number of ending payouts (use dynamic value)
 Add trailing dots to any text box that can be long depending on the value
+Remove comments you don't need
