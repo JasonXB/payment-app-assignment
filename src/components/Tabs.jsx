@@ -10,7 +10,7 @@ export default function Tabs() {
       </div>
       <div className="border-b-2 border-lightGray">
         <button className="px-4 py-2 text-blue rounded-t-md">
-          Pending Payouts
+          Paid Payouts
         </button>
       </div>
     </div>
