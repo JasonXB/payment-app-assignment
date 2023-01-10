@@ -1,9 +1,7 @@
 import React from "react";
-import GiftIcon from "../components/icons/Gift";
-import ViewArrow from "../components/ViewArrow";
-import SendPayment from "../components/buttons/SendPayment";
+import TableRow from "../components/TableRow";
 
-export default function Table() {
+export default function Table({ data }) {
   return (
     <div className="flex flex-col">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -16,7 +14,7 @@ export default function Table() {
                     scope="col"
                     className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                   >
-                    Affiliate Name
+                    <span>Affiliate Name</span>
                   </th>
                   <th
                     scope="col"
@@ -69,35 +67,9 @@ export default function Table() {
                 </tr>
               </thead>
               <tbody>
-                <tr id="table_row_1" className="border-b">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    Affil name
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    date
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    revenue generated
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    paid payouts
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    unpaid payouts
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    ready payouts
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    <ViewArrow />
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    <GiftIcon />
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    <SendPayment />
-                  </td>
-                </tr>
+                {data.map((el, i) => {
+                  return <TableRow key={i} data={el} />;
+                })}
               </tbody>
             </table>
           </div>
