@@ -12,7 +12,7 @@ export function convertRawDateToString(dateObject) {
   // Ex. [10, 28, 2022] → → → Nov 28 2022
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; // prettier-ignore
   month = monthNames[+month];
-  return month + " " + day + " " + year;
+  return `${day} ${month} ${year}`;
 }
 
 //# Run Jest test on the stringDate function
