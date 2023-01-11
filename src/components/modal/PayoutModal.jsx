@@ -14,7 +14,7 @@ export default function PayoutModal({ data }) {
       <div className="modal-dialog modal-xl relative w-auto pointer-events-none">
         <div className="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
           <BackArrow />
-          <div className="modal-header flex flex-shrink-0 items-center justify-center p-4 border-b border-gray-200 rounded-t-md">
+          <div className="modal-header flex flex-shrink-0 items-center justify-center py-4 mx-4 border-b border-gray rounded-t-md">
             <h5
               className="text-xl font-medium leading-normal text-gray"
               id="exampleModalXlLabel"
