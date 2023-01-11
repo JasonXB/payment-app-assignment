@@ -4,7 +4,6 @@ import PayoutsOverview from "../pageSections/PayoutsOverview";
 import TableTop from "../pageSections/TableTop";
 import Table from "../components/table/PaymentsTable";
 import PayoutModal from "../components/modal/PayoutModal";
-
 import { mockData } from "../mockData";
 
 function App() {
@@ -13,7 +12,7 @@ function App() {
       <PayoutsOverview />
       <TableTop />
       <Table data={mockData} />
-      <PayoutModal />
+      <PayoutModal data={mockData} />
     </LayoutBlock>
   );
 }

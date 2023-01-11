@@ -7,6 +7,7 @@ export const mockData = [
     paidPayouts: 0,
     unpaidPayouts: 35.61,
     readyPayouts: 35.61,
+    payoutType: "Cash",
   },
   {
     affiliateName: "Dwight Wisoky",
@@ -16,6 +17,7 @@ export const mockData = [
     paidPayouts: 0,
     unpaidPayouts: 26.7,
     readyPayouts: 0,
+    payoutType: "Store Credit",
   },
   {
     affiliateName: "Zack Treutel",
@@ -25,6 +27,7 @@ export const mockData = [
     paidPayouts: 0,
     unpaidPayouts: 16.2,
     readyPayouts: 16.2,
+    payoutType: "Store Credit",
   },
   {
     affiliateName: "Hilma Welch",
@@ -34,6 +37,7 @@ export const mockData = [
     paidPayouts: 0,
     unpaidPayouts: 12.69,
     readyPayouts: 0,
+    payoutType: "Cash",
   },
   {
     affiliateName: "Ericka Mohr",
@@ -43,6 +47,7 @@ export const mockData = [
     paidPayouts: 0,
     unpaidPayouts: 11.88,
     readyPayouts: 11.88,
+    payoutType: "Cash",
   },
   {
     affiliateName: "Adam Kohler",
@@ -52,6 +57,7 @@ export const mockData = [
     paidPayouts: 0,
     unpaidPayouts: 9.97,
     readyPayouts: 0,
+    payoutType: "Store Credit",
   },
   {
     affiliateName: "Pierre Crooks",
@@ -61,6 +67,7 @@ export const mockData = [
     paidPayouts: 0,
     unpaidPayouts: 9.73,
     readyPayouts: 0,
+    payoutType: "Store Credit",
   },
   {
     affiliateName: "Rocio West",
@@ -70,5 +77,6 @@ export const mockData = [
     paidPayouts: 0,
     unpaidPayouts: 8.56,
     readyPayouts: 0,
+    payoutType: "Cash",
   },
 ];
