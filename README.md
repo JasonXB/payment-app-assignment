@@ -2,20 +2,9 @@ COMMENTS
 
 //# Run Jest tests on certain functions mentioned in the comment
 //$ Hardcoded data that should be swapped with dynamic data
+//^ JEST test these
 
-TO DO
-Make sure the search / export buttons, search field, and dropdown menus all have the same height
-Will do when we create that grid row of content
-
-Optimize with useMemo and useCallback
-Fix highlights on drop down menus
-Make the 3 rectangles up top actually have dynamic values (use React context)
-Make all shadow-lg and shadow-md 's match (After you put the site together)
 Add number of ending payouts (use dynamic value)
+Fix highlights on drop down menus
 Add trailing dots to any text box that can be long depending on the value
-Remove comments you don't need
-// const revealModal = () => setShowModal(true);
-// const hideModal = () => setShowModal(false);
-
-fIX 16.2 and turn in to 16.20 with padding using a utility fn
 Fix bug where modal shifts webpage to left when it appears

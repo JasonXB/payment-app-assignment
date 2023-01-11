@@ -6,20 +6,6 @@ module.exports = {
       md: "768px",
       lg: "976px",
       xl: "1440px",
-      // Custom breakpoints that offer greater flexibility when styling
-      bp400: "400px",
-      bp500: "500px",
-      bp600: "600px",
-      bp700: "700px",
-      bp800: "800px",
-      bp900: "900px",
-      bp1000: "1000px",
-      bp1100: "1100px",
-      bp1200: "1200px",
-      bp1300: "1300px",
-      bp1400: "1400px",
-      bp1500: "1500px",
-      bp1600: "1600px",
     },
     colors: {
       blue: "#3257f3", // buttons

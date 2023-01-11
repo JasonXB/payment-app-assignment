@@ -6,7 +6,6 @@ export default function PayoutsOverview({
   unpaidPayouts,
   readyPayouts,
 }) {
-  //$ Three total props must be made dynamic
   return (
     <section className="mb-10">
       <h6 className="text-[1.5rem] leading-7 text-center font-bold mb-6 lg:text-left">
