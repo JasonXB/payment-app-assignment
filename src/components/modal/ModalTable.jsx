@@ -37,21 +37,27 @@ export default function ModalTable({ data }) {
                   <ModalTableRow key={uuidv4()} data={el} />
                 ))}
                 <tr className="border-b">
-                  <td className={tdStyle + "text-center font-semibold"}>Store Credit:</td>
+                  <td className={tdStyle + "text-center font-semibold"}>
+                    Store Credit:
+                  </td>
                   <td className={tdStyle + "font-semibold text-center"}></td>
                   <td className={tdStyle + "text-center font-semibold"}>
                     ADD UP STORE CREDIT
                   </td>
                 </tr>
                 <tr className="border-b">
-                  <td className={tdStyle + "text-center font-semibold"}>Cash:</td>
+                  <td className={tdStyle + "text-center font-semibold"}>
+                    Cash:
+                  </td>
                   <td className={tdStyle + "font-semibold text-center"}></td>
                   <td className={tdStyle + "text-center font-semibold"}>
                     ADD UP CASH
                   </td>
                 </tr>
                 <tr className="border-b border-none">
-                  <td className={tdStyle + "text-center font-semibold"}>Total:</td>
+                  <td className={tdStyle + "text-center font-semibold"}>
+                    Total:
+                  </td>
                   <td className={tdStyle + "font-semibold text-center"}></td>
                   <td className={tdStyle + "text-center font-semibold"}>
                     SUM OF BOTH TOTALS
@@ -59,7 +65,6 @@ export default function ModalTable({ data }) {
                 </tr>
               </tbody>
             </table>
-            
           </div>
         </div>
       </div>

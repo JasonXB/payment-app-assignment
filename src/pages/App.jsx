@@ -5,7 +5,7 @@ import TableTop from "../pageSections/TableTop";
 import Table from "../components/table/PaymentsTable";
 import PayoutModal from "../components/modal/PayoutModal";
 import { mockData } from "../mockData";
-import { filterZeroPayouts } from "../utility/Modal";
+import { filterZeroPayouts } from "../utility/ModalCalcs";
 import { calcWebpageTotals } from "../utility/pageCalcs";
 
 function App() {
