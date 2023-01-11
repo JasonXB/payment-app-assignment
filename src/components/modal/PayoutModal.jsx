@@ -1,6 +1,7 @@
 import React from "react";
 import ModalTable from "./ModalTable";
 import BackArrow from "../BackArrow";
+import SendPayoutsButton from "../buttons/SendPayouts"
 export default function PayoutModal({ data }) {
   return (
     <div
@@ -27,6 +28,7 @@ export default function PayoutModal({ data }) {
           </p>
           <div className="modal-body relative px-4 pb-4">
             <ModalTable data={data} />
+            <SendPayoutsButton />
           </div>
         </div>
       </div>

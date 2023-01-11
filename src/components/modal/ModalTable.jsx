@@ -1,6 +1,5 @@
 import React from "react";
 import ModalTableRow from "./ModalTableRow";
-import SendPayoutsButton from "../buttons/SendPayouts";
 import { v4 as uuidv4 } from "uuid";
 
 export default function ModalTable({ data }) {
@@ -60,7 +59,7 @@ export default function ModalTable({ data }) {
                 </tr>
               </tbody>
             </table>
-            <SendPayoutsButton />
+            
           </div>
         </div>
       </div>
