@@ -4,6 +4,8 @@ export default function SendPaymentButton() {
   return (
     <button
       type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModalXl"
       className="w-full px-8 py-2 bg-blue text-white font-medium text-xs leading-normal rounded flex align-center"
     >
       <span className="mr-2 text-white">Send Payment</span>

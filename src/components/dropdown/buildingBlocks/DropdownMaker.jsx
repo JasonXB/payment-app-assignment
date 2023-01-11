@@ -25,9 +25,17 @@ export default function DropdownMaker({ listItems, text }) {
         {listItems.map((text, i) => {
           // Apply rounded edges to first and last list items
           let rounded = "";
-          if (i === 0) rounded = "top";
-          else if (i === lastListIndex) rounded = "bottom";
-          return <ListItem key={uuidv4()} text={text} rounded={rounded} />;
+          i === 0 ? (rounded = "top") : (rounded = "");
+          i === lastListIndex ? (rounded = "bottom") : (rounded = "");
+          // Apply an onClick function for the Send Payouts button specifically
+          return (
+            <ListItem
+              key={uuidv4()}
+              text={text}
+              rounded={rounded}
+              revealModal={text === "Send payouts" ? true : false}
+            />
+          );
         })}
       </ul>
     </div>

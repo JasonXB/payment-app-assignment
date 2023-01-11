@@ -31,6 +31,8 @@ export default function PayoutRectangle({
         {includeButton && (
           <button
             type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModalXl"
             className="inline-block px-4 py-0 bg-blue text-white font-medium text-xs leading-tight rounded hover:shadow-lg "
           >
             Pay All
