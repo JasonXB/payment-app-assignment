@@ -18,7 +18,7 @@ function App() {
         unpaidPayouts={unpaidPayouts}
         readyPayouts={readyPayouts}
       />
-      <TableTop />
+      <TableTop pendingPayouts={mockData.length} />
       <Table data={mockData} />
       <PayoutModal data={filterZeroPayouts(mockData)} />
     </LayoutBlock>
