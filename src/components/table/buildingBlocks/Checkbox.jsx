@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Checkbox({ name, checked }) {
+export default function Checkbox({ name, checked, className = "" }) {
   return (
     <div className="form-check">
       <input
@@ -12,7 +12,8 @@ export default function Checkbox({ name, checked }) {
       />
       <label
         className={
-          "ml-4 form-check-label inline-block text-blue text-sm text-gray-900 font-medium whitespace-nowrap "
+          "ml-4 form-check-label inline-block text-blue text-sm text-gray-900 font-medium whitespace-nowrap " +
+          className
         }
       >
         {name}
