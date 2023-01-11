@@ -92,3 +92,7 @@ html {
 #payments-table * {
   border-color: #bcbcc4;
 }
+
+body {
+  padding-right: 0px !important;
+}
