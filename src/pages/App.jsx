@@ -10,7 +10,7 @@ import { mockData } from "../mockData";
 function App() {
   return (
     <LayoutBlock>
-      <PayoutModal/>
+      <PayoutModal />
       {/* <PayoutsOverview />
       <TableTop />
       <Table data={mockData} /> */}
