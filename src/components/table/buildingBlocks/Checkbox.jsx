@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { useCustomContext } from "../../../context";
+
 export default function Checkbox({ name, className = "" }) {
   // Clicking the checbox should change how it looks and update the hashmap in React context
-  const { checked, setChecked } = useCustomContext();
-  // When a checkbox is hit, save it to the state object in React Context
   // A box being checked for Zack Treutel makes a key value pair like.. {'Zack Treutel': true }
   // A box being unchecked makes a key value pair like... { 'Zack Treutel': false }
+  const { checked, setChecked } = useCustomContext();
   const hitCheckbox = function () {
     let hashMapClone = { ...checked }; // make a cloned hash map that doesn't mutate with the original
     hashMapClone[name] = checked[name] ? false : true; // toggle hash map property value
     setChecked(hashMapClone);
   };
+
   return (
     <div className="form-check">
       <input
