@@ -20,9 +20,9 @@ export function calcModalTotals(mockData) {
     sum: cashTotal + creditTotal,
     printList,
   };
-} //^ JEST test this fn
+}
 
 // Take list of mock Data and filter out array entries where payouts = 0
 export function filterZeroPayouts(data) {
   return data.filter((obj) => obj.readyPayouts > 0);
-} //^ JEST test this fn
+}
