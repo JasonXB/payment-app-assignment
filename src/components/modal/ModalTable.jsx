@@ -9,17 +9,16 @@ export default function ModalTable({ data }) {
   const tdStyle = "text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap "; // prettier-ignore
   // Perform calculations for store credit totals, cash totals, and total sums
   // Calculations should change whenever a user tixks or unticks a checkbox
-  const { checked } = useCustomContext(); // hash map that tracks what payout rows are checked
+  const { checked, setLogList } = useCustomContext(); // hash map that tracks what payout rows are checked
   const [totals, setTotals] = useState({
     storeCredit: 0, // needed for modal
     cash: 0, // needed for modal
     combinedSum: 0, // needed for modal
-    printableList: [], // to console log
   });
   useEffect(() => {
     let storeCredit = 0;
     let cash = 0;
-    let printableList = [];
+    let logList = [];
     data.forEach((obj) => {
       if (!checked[obj.affiliateName]) return; // skip unchecked affiliates when doing calcs
       // Add to cash/storeCredit sums depending on the payout type
@@ -29,22 +28,21 @@ export default function ModalTable({ data }) {
         storeCredit = round(storeCredit + obj.readyPayouts);
       }
       // Regardless of payout type, extend the printaable list
-      printableList.push({
+      logList.push({
         affiliateName: obj.affiliateName,
-        payoutAmount: obj.readyPayouts,
+        payoutAmount: "$" + numericString(obj.readyPayouts), // "$4.09"
       });
     });
-    // Update state object
+    // Update local state object that deals with the Modal Totals
     setTotals({
       cash,
       storeCredit,
-      printableList,
       combinedSum: cash + storeCredit,
     });
-    // LOG AFFILIATES AND PAYOUT AMOUNTS
-    // console.log(printableList);
-  }, [checked, data]);
-  // console.log(totals.printableList)
+    // Update React context array holding the array we need to log to the console
+    setLogList(logList);
+  }, [checked, data, setLogList]);
+
   return (
     <div id="payments-table" className="flex flex-col">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">

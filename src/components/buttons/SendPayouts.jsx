@@ -1,9 +1,12 @@
 import React from "react";
-
+import { useCustomContext } from "../../context";
 export default function SendPayoutsButton() {
+  // Function that lets you log the payouts list is stored in React Context
+  const { logPayoutsList } = useCustomContext();
   return (
     <button
       type="button"
+      onClick={logPayoutsList}
       className="w-full py-3 bg-blue text-white font-medium text-xs leading-normal rounded flex align-center items-center justify-center"
     >
       <span className="mr-3 text-white text-lg">Send payouts</span>

@@ -2,6 +2,7 @@ import React from "react";
 import ModalTable from "./ModalTable";
 import BackArrow from "../BackArrow";
 import SendPayoutsButton from "../buttons/SendPayouts";
+
 export default function PayoutModal({ data }) {
   return (
     <div
