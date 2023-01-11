@@ -47,7 +47,10 @@ export default function SortBy() {
           <button
             onClick={menuManip.toggleRevenueGenerated}
             className={
-              styles.button + " rounded-t-lg grid grid-cols-[auto_1fr_auto]"
+              styles.button +
+              ` rounded-t-lg grid grid-cols-[auto_1fr_auto] ${
+                menu.revenueGenerated && "bg-lightGray"
+              }`
             }
           >
             <span>Revenue Generated</span>
@@ -59,7 +62,10 @@ export default function SortBy() {
           <button
             onClick={menuManip.toggleRecentReferral}
             className={
-              styles.button + " rounded-b-lg grid grid-cols-[auto_1fr_auto]"
+              styles.button +
+              `rounded-b-lg grid grid-cols-[auto_1fr_auto] ${
+                menu.mostRecentReferral && "bg-lightGray"
+              }`
             }
           >
             <span>Most Recent Referral</span>
