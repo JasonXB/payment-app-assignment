@@ -6,12 +6,10 @@ export const useCustomContext = () => useContext(GlobalContext); // export custo
 
 export default function GlobalContextProvider(props) {
   // Define state variables and methods that mutate them
-  const [total, setTotal] = useState(0); // payment modal total value
-  const [showModal, setShowModal] = useState(false); // show modal if true
-  const toggleModal = () => setShowModal(!showModal);
+  const [checked, setChecked] = useState({});
 
   // Create an object that lets you distribute all state variables & methods to regular components
-  const distribution = { total, setTotal, showModal, toggleModal };
+  const distribution = { checked, setChecked };
   return (
     <GlobalContext.Provider value={distribution}>
       {props.children}

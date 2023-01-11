@@ -13,7 +13,6 @@ export default function TableRow({ data }) {
       <td className={tdStyle + "text-blue"}>
         <Affiliate
           name={data.affiliateName}
-          checked={data.checked}
           flag={data.flag}
         />
       </td>
