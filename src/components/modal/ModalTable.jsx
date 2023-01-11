@@ -1,9 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ModalTableRow from "./ModalTableRow";
+import { useCustomContext } from "../../context";
+import { round } from "../../utility/pageCalcs";
+import { numericString } from "../../utility/payoutFormat";
 import { v4 as uuidv4 } from "uuid";
 
 export default function ModalTable({ data }) {
   const tdStyle = "text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap "; // prettier-ignore
+  // Perform calculations for store credit totals, cash totals, and total sums
+  // Calculations should change whenever a user tixks or unticks a checkbox
+  const { checked } = useCustomContext(); // hash map that tracks what payout rows are checked
+  const [totals, setTotals] = useState({
+    storeCredit: 0, // needed for modal
+    cash: 0, // needed for modal
+    combinedSum: 0, // needed for modal
+    printableList: [], // to console log
+  });
+  useEffect(() => {
+    let storeCredit = 0;
+    let cash = 0;
+    let printableList = [];
+    data.forEach((obj) => {
+      if (!checked[obj.affiliateName]) return; // skip unchecked affiliates when doing calcs
+      // Add to cash/storeCredit sums depending on the payout type
+      if (obj.payoutType === "Cash") {
+        cash = round(cash + obj.readyPayouts);
+      } else if (obj.payoutType === "Store Credit") {
+        storeCredit = round(storeCredit + obj.readyPayouts);
+      }
+      // Regardless of payout type, extend the printaable list
+      printableList.push({
+        affiliateName: obj.affiliateName,
+        payoutAmount: obj.readyPayouts,
+      });
+    });
+    // Update state object
+    setTotals({
+      cash,
+      storeCredit,
+      printableList,
+      combinedSum: cash + storeCredit,
+    });
+    // LOG AFFILIATES AND PAYOUT AMOUNTS
+    // console.log(printableList);
+  }, [checked, data]);
+  // console.log(totals.printableList)
   return (
     <div id="payments-table" className="flex flex-col">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -42,7 +83,7 @@ export default function ModalTable({ data }) {
                   </td>
                   <td className={tdStyle + "font-semibold text-center"}></td>
                   <td className={tdStyle + "text-center font-semibold"}>
-                    ADD UP STORE CREDIT
+                    ${numericString(totals.storeCredit)}
                   </td>
                 </tr>
                 <tr className="border-b">
@@ -51,7 +92,7 @@ export default function ModalTable({ data }) {
                   </td>
                   <td className={tdStyle + "font-semibold text-center"}></td>
                   <td className={tdStyle + "text-center font-semibold"}>
-                    ADD UP CASH
+                    ${numericString(totals.cash)}
                   </td>
                 </tr>
                 <tr className="border-b border-none">
@@ -60,7 +101,7 @@ export default function ModalTable({ data }) {
                   </td>
                   <td className={tdStyle + "font-semibold text-center"}></td>
                   <td className={tdStyle + "text-center font-semibold"}>
-                    SUM OF BOTH TOTALS
+                    ${numericString(totals.combinedSum)}
                   </td>
                 </tr>
               </tbody>
