@@ -26,7 +26,10 @@ export default function PayoutModal({ data }) {
               aria-label="Close"
             />
           </div>
-          <div className="modal-body relative p-4">
+          <p className="font-semibold text-blue text-lg text-center mt-6" >
+            The following affiliates will be sent payouts:
+          </p>
+          <div className="modal-body relative px-4 pb-4">
             <ModalTable data={data} />
           </div>
         </div>
