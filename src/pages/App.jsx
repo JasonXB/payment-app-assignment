@@ -3,14 +3,17 @@ import LayoutBlock from "../components/LayoutBlock";
 import PayoutsOverview from "../pageSections/PayoutsOverview";
 import TableTop from "../pageSections/TableTop";
 import Table from "../components/table/PaymentsTable";
+import PayoutModal from "../components/modal/PayoutModal";
+
 import { mockData } from "../mockData";
 
 function App() {
   return (
     <LayoutBlock>
-      <PayoutsOverview />
+      <PayoutModal/>
+      {/* <PayoutsOverview />
       <TableTop />
-      <Table data={mockData} />
+      <Table data={mockData} /> */}
     </LayoutBlock>
   );
 }
