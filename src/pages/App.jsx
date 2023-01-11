@@ -5,6 +5,7 @@ import TableTop from "../pageSections/TableTop";
 import Table from "../components/table/PaymentsTable";
 import PayoutModal from "../components/modal/PayoutModal";
 import { mockData } from "../mockData";
+import { filterZeroPayouts } from "../utility/Modal";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <PayoutsOverview />
       <TableTop />
       <Table data={mockData} />
-      <PayoutModal data={mockData} />
+      <PayoutModal data={filterZeroPayouts(mockData)} />
     </LayoutBlock>
   );
 }
