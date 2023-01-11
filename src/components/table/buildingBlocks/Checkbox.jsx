@@ -14,7 +14,6 @@ export default function Checkbox({ name, checked }) {
         className={
           "ml-4 form-check-label inline-block text-blue text-sm text-gray-900 font-medium whitespace-nowrap "
         }
-        for="flexCheckChecked"
       >
         {name}
       </label>

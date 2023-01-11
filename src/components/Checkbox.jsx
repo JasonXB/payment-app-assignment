@@ -17,7 +17,6 @@ export default function Checkbox({ name, checked, margin = "" }) {
         className={
           "form-check-label inline-block text-gray-800 text-base " + margin
         }
-        for="flexCheckDefault"
       >
         {name}
       </label>

@@ -14,3 +14,5 @@ Make all shadow-lg and shadow-md 's match (After you put the site together)
 Add number of ending payouts (use dynamic value)
 Add trailing dots to any text box that can be long depending on the value
 Remove comments you don't need
+  // const revealModal = () => setShowModal(true);
+  // const hideModal = () => setShowModal(false);
