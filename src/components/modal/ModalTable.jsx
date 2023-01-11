@@ -10,7 +10,7 @@ export default function ModalTable({ data }) {
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
           <div className="overflow-x-auto">
-            <table className="min-w-full">
+            <table className="min-w-full  mb-8">
               <thead className="border-b">
                 <tr>
                   <th
@@ -51,7 +51,7 @@ export default function ModalTable({ data }) {
                     ADD UP CASH
                   </td>
                 </tr>
-                <tr className="border-b">
+                <tr className="border-b border-none">
                   <td className={tdStyle + "text-center font-semibold"}>Total:</td>
                   <td className={tdStyle + "font-semibold text-center"}></td>
                   <td className={tdStyle + "text-center font-semibold"}>
