@@ -1,7 +1,11 @@
 import React from "react";
 import PayoutRectangle from "../components/PayoutRectangle";
-
-export default function PayoutsOverview() {
+import { numericString } from "../utility/payoutFormat";
+export default function PayoutsOverview({
+  paidPayouts,
+  unpaidPayouts,
+  readyPayouts,
+}) {
   //$ Three total props must be made dynamic
   return (
     <section className="mb-10">
@@ -9,11 +13,17 @@ export default function PayoutsOverview() {
         Payouts Overview
       </h6>
       <div className="flex flex-col gap-5 flex-wrap items-center lg:flex-row xl:gap-10">
-        <PayoutRectangle label="Total Paid Payouts" total="0.00" />
-        <PayoutRectangle label="Total Unpaid Payouts" total="185.88" />
+        <PayoutRectangle
+          label="Total Paid Payouts"
+          total={numericString(paidPayouts)}
+        />
+        <PayoutRectangle
+          label="Total Unpaid Payouts"
+          total={numericString(unpaidPayouts)}
+        />
         <PayoutRectangle
           label="Total Ready Payouts"
-          total="185.88"
+          total={numericString(readyPayouts)}
           includeButton={true}
           green={true}
         />
