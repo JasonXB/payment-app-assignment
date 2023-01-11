@@ -1,13 +1,12 @@
 import React from "react";
 
 export default function SendPayoutsButton() {
-  //! May need to remove rounded class from button depending on how modal turns out
   return (
     <button
       type="button"
-      className="w-full py-4 bg-blue text-white font-medium text-xs leading-normal rounded flex align-center items-center justify-center"
+      className="w-full py-3 bg-blue text-white font-medium text-xs leading-normal rounded flex align-center items-center justify-center"
     >
-      <span className="mr-3 text-white text-[1.25rem]">Send payouts</span>
+      <span className="mr-3 text-white text-lg">Send payouts</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="white"

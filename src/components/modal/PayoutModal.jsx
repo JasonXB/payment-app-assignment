@@ -1,5 +1,5 @@
 import React from "react";
-
+import ModalTable from "./ModalTable";
 export default function PayoutModal({ data }) {
   return (
     <div
@@ -27,7 +27,7 @@ export default function PayoutModal({ data }) {
             />
           </div>
           <div className="modal-body relative p-4">
-            PLACE MODAL CONTENT HERE
+            <ModalTable data={data} />
           </div>
         </div>
       </div>
