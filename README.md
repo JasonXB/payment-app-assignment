@@ -18,3 +18,4 @@ Remove comments you don't need
 // const hideModal = () => setShowModal(false);
 
 fIX 16.2 and turn in to 16.20 with padding using a utility fn
+Fix bug where modal shifts webpage to left when it appears

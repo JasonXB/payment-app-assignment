@@ -1,3 +1,5 @@
+import { convertPayoutString } from "../utility/convertPayoutString";
+
 export function calculateTotals(mockData) {
   let cashTotal, creditTotal = 0; // prettier-ignore
   const printList = [];
@@ -26,7 +28,7 @@ export function calculateTotals(mockData) {
 export function filterZeroPayouts(data) {
   return data.filter((obj) => {
     // Convert ready payouts string to a 2 decimal number
-    const payout = Number(parseFloat(obj.readyPayouts).toFixed(2));
+    const payout = convertPayoutString(obj.readyPayouts);
     return payout > 0;
   });
 } //^ JEST test this fn
